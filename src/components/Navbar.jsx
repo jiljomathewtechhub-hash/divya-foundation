@@ -13,7 +13,7 @@ function Navbar() {
         <span>DIVYA</span>
       </Link>
 
-      {/* 🔥 HAMBURGER BUTTON (ONLY MOBILE) */}
+      {/* HAMBURGER BUTTON (ONLY MOBILE) */}
       <div
         className="menu-toggle"
         onClick={() => setMenuOpen(!menuOpen)}

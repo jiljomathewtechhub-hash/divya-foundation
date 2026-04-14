@@ -9,7 +9,7 @@ import {
 // IMAGES
 import aboutImg from "../assets/about.webp";
 
-// STAFF IMAGES (exact names)
+// STAFF IMAGES
 import anjaliAImg from "../assets/Dr. Anjali Agrawal.webp";
 import anjaliJImg from "../assets/Anjali Jain.webp";
 import shwetaImg from "../assets/Shweta Srivastava.webp";

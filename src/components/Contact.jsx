@@ -23,7 +23,6 @@ function Contact() {
         setSubmitted(true);
         form.reset();
 
-        // 🔥 Smooth scroll to top (better UX)
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
         alert("Something went wrong. Please try again.");
@@ -106,10 +105,10 @@ function Contact() {
             data-netlify-honeypot="bot-field"
             onSubmit={handleSubmit}
           >
-            {/* 🔥 Required for Netlify */}
+            {/* Required for Netlify */}
             <input type="hidden" name="form-name" value="contact" />
 
-            {/* 🔥 Honeypot (spam protection) */}
+            {/* Honeypot (spam protection) */}
             <input type="hidden" name="bot-field" />
 
             <input

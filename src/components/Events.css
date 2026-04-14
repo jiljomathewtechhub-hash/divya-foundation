@@ -6,7 +6,7 @@
   width: 100%;
   min-height: 100vh;
   padding: 100px 8%;
-  background: linear-gradient(to bottom, #020617, #0f172a); /* 🔥 improved */
+  background: linear-gradient(to bottom, #020617, #0f172a);
   color: #fff;
   text-align: center;
 }
@@ -26,11 +26,11 @@
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 15px;
-  color: #ffffff; /* ensure visibility */
+  color: #ffffff;
 }
 
 .events-desc {
-  color: #cbd5e1; /* brighter for readability */
+  color: #cbd5e1; 
   font-size: 16px;
   margin-bottom: 60px;
 }
@@ -117,7 +117,7 @@
 .future-title {
   font-size: 42px;
   margin-bottom: 50px;
-  color: #ffffff; /* 🔥 FIX visibility */
+  color: #ffffff; 
 }
 
 .future-title::after {
@@ -141,7 +141,7 @@
 /* CARD */
 
 .future-card {
-  background: #111827; /* lighter than bg */
+  background: #111827; 
   border-radius: 16px;
   overflow: hidden;
   padding-bottom: 20px;
@@ -168,12 +168,12 @@
 .future-card h2 {
   font-size: 22px;
   margin: 20px 15px 10px;
-  color: #f59e0b; /* 🔥 highlight */
+  color: #f59e0b; 
 }
 
 .future-card p {
   font-size: 15px;
-  color: #e5e7eb; /* 🔥 FIX readability */
+  color: #e5e7eb; 
   padding: 0 15px;
   line-height: 1.6;
 }
