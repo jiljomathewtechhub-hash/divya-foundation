@@ -1,6 +1,7 @@
 import "./Contact.css";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { useState } from "react";
+import { color } from "framer-motion";
 
 function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -35,7 +36,6 @@ function Contact() {
   return (
     <section className="contact">
       <div className="contact-container">
-
         {/* LEFT SIDE */}
         <div className="contact-info">
           <h2>Contact Us</h2>
@@ -78,7 +78,11 @@ function Contact() {
               href="https://www.instagram.com/divya.durham/"
               target="_blank"
               rel="noopener noreferrer"
-              className="social-icon instagram"
+              className="social-icon facebook"
+              style={{
+                background:
+                  "linear-gradient(135deg, #f9ce34, #ee2a7b, #6228d7)",
+              }}
             >
               <FaInstagram />
             </a>
@@ -142,7 +146,6 @@ function Contact() {
             <button type="submit">Submit</button>
           </form>
         </div>
-
       </div>
     </section>
   );
