@@ -11,14 +11,25 @@ function Contact() {
     const form = e.target;
     const data = new FormData(form);
 
-    await fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(data).toString(),
-    });
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(data).toString(),
+      });
 
-    setSubmitted(true);
-    form.reset();
+      if (response.ok) {
+        setSubmitted(true);
+        form.reset();
+
+        // 🔥 Smooth scroll to top (better UX)
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      alert("Network error. Please try again.");
+    }
   };
 
   return (
@@ -88,10 +99,14 @@ function Contact() {
             name="contact"
             method="POST"
             data-netlify="true"
+            data-netlify-honeypot="bot-field"
             onSubmit={handleSubmit}
           >
-            {/* REQUIRED FOR NETLIFY */}
+            {/* 🔥 Required for Netlify */}
             <input type="hidden" name="form-name" value="contact" />
+
+            {/* 🔥 Honeypot (spam protection) */}
+            <input type="hidden" name="bot-field" />
 
             <input
               type="text"
@@ -120,7 +135,7 @@ function Contact() {
             />
 
             <div className="checkbox">
-              <input type="checkbox" id="terms" required />
+              <input type="checkbox" id="terms" name="terms" required />
               <label htmlFor="terms">I agree to Terms & Conditions</label>
             </div>
 

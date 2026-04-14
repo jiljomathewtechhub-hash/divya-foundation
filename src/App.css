@@ -39,7 +39,7 @@ html, body {
   background: linear-gradient(90deg, #0f172a, #1e293b);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 
-  position: fixed;   /* ✅ only this */
+  position: fixed;
   top: 0;
   left: 0;
 
@@ -55,6 +55,9 @@ html, body {
   display: flex;
   align-items: center;
   gap: 10px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
 }
 
 .logo {
@@ -96,14 +99,10 @@ html, body {
   transition: all 0.3s ease;
 }
 
-
-/* Hover color (logo orange) */
 .navbar-links a:hover {
   color: #f59e0b;
 }
 
-
-/* Underline animation (gradient) */
 .navbar-links a::after {
   content: "";
   position: absolute;
@@ -113,7 +112,6 @@ html, body {
   bottom: -4px;
 
   background: linear-gradient(90deg, #f59e0b, #ef4444);
-
   transition: width 0.3s ease;
 }
 
@@ -170,22 +168,49 @@ html, body {
 
 
 /* ============================= */
-/* RESPONSIVE */
+/* 🔥 MOBILE FIX */
 /* ============================= */
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
 
 @media (max-width: 768px) {
 
+  /* KEEP NAVBAR HORIZONTAL */
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px 20px;
+    flex-direction: row;
+    padding: 12px 20px;
   }
 
+  /* SHOW HAMBURGER */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* HIDE MENU */
   .navbar-links {
-    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
     width: 100%;
-    gap: 12px;
-    margin-top: 10px;
+
+    background: #0f172a;
+
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 0;
+
+    display: none;
+  }
+
+  /* SHOW WHEN ACTIVE */
+  .navbar-links.active {
+    display: flex;
   }
 
   .hero h1 {
@@ -193,18 +218,11 @@ html, body {
   }
 }
 
-.navbar-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none; /* 🔥 remove underline */
-  color: white; /* keep text color */
-}
 
-.navbar-brand {
-  cursor: pointer;
-}
+/* ============================= */
+/* CONTENT OFFSET */
+/* ============================= */
 
 .main-content {
-  margin-top: 70px; 
+  margin-top: 70px;
 }

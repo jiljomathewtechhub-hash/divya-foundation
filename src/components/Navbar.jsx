@@ -1,33 +1,47 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import logo from "../assets/logo.png";
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <nav className="navbar">
-      {/* BRAND (CLICKABLE) */}
+      {/* BRAND */}
       <Link to="/" className="navbar-brand">
         <img src={logo} alt="Divya Logo" className="logo" />
         <span>DIVYA</span>
       </Link>
 
+      {/* 🔥 HAMBURGER BUTTON (ONLY MOBILE) */}
+      <div
+        className="menu-toggle"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        ☰
+      </div>
+
       {/* NAV LINKS */}
-      <ul className="navbar-links">
+      <ul className={`navbar-links ${menuOpen ? "active" : ""}`}>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
         </li>
 
         <li>
-          <Link to="/events">Events</Link>
-        </li>
-        <Link to="/gallery">Gallery</Link>
-
-        <li>
-          <Link to="/about">About Us</Link>
+          <Link to="/events" onClick={() => setMenuOpen(false)}>Events</Link>
         </li>
 
-        {/* CTA */}
+        {/* 🔥 FIX: wrap this in li */}
         <li>
-          <Link to="/contact" className="cta">
+          <Link to="/gallery" onClick={() => setMenuOpen(false)}>Gallery</Link>
+        </li>
+
+        <li>
+          <Link to="/about" onClick={() => setMenuOpen(false)}>About Us</Link>
+        </li>
+
+        <li>
+          <Link to="/contact" className="cta" onClick={() => setMenuOpen(false)}>
             Join Us
           </Link>
         </li>
