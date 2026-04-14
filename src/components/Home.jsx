@@ -167,6 +167,38 @@ function Home() {
           </div>
         </div>
 
+        {/* ============================= */}
+        {/* INSTAGRAM SECTION */}
+        {/* ============================= */}
+
+        <section className="instagram">
+          <p className="insta-subtitle">FOLLOW US</p>
+          <h2 className="insta-title">@divya.durham</h2>
+
+          {/* Divider */}
+          <div className="insta-line"></div>
+
+          {/* Instagram Embed */}
+          <div className="insta-wrapper">
+            <iframe
+              src="https://www.instagram.com/divya.durham/embed"
+              title="Instagram Feed"
+              frameBorder="0"
+              scrolling="no"
+            ></iframe>
+          </div>
+
+          {/* CTA Button */}
+          <a
+            href="https://www.instagram.com/divya.durham/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="insta-btn"
+          >
+            Follow on Instagram →
+          </a>
+        </section>
+
         {/* ================= SPONSORS ================= */}
         <section className="home-sponsors">
           <div className="sponsors-header">
