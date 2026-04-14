@@ -1,10 +1,28 @@
 import "./Contact.css";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { useState } from "react";
 
 function Contact() {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(data).toString(),
+    });
+
+    setSubmitted(true);
+    form.reset();
+  };
+
   return (
     <section className="contact">
-
       <div className="contact-container">
 
         {/* LEFT SIDE */}
@@ -60,13 +78,19 @@ function Contact() {
         <div className="contact-form">
           <h2>Join Us</h2>
 
-          {/* 🔥 NETLIFY FORM */}
+          {submitted && (
+            <p style={{ color: "#22c55e", marginBottom: "10px" }}>
+              ✅ Thank you! Your message has been sent.
+            </p>
+          )}
+
           <form
             name="contact"
             method="POST"
             data-netlify="true"
+            onSubmit={handleSubmit}
           >
-            {/* REQUIRED */}
+            {/* REQUIRED FOR NETLIFY */}
             <input type="hidden" name="form-name" value="contact" />
 
             <input
@@ -101,12 +125,10 @@ function Contact() {
             </div>
 
             <button type="submit">Submit</button>
-
           </form>
         </div>
 
       </div>
-
     </section>
   );
 }
