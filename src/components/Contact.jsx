@@ -2,12 +2,6 @@ import "./Contact.css";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
 function Contact() {
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Form submitted! (You can connect backend later)");
-  };
-
   return (
     <section className="contact">
 
@@ -41,7 +35,6 @@ function Contact() {
 
           <h4>Visit Our Socials</h4>
 
-          {/* SOCIAL ICONS */}
           <div className="socials">
             <a
               href="https://www.facebook.com/profile.php?id=61550231581386"
@@ -67,15 +60,40 @@ function Contact() {
         <div className="contact-form">
           <h2>Join Us</h2>
 
-          <form onSubmit={handleSubmit}>
+          {/* 🔥 NETLIFY FORM */}
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+          >
+            {/* REQUIRED */}
+            <input type="hidden" name="form-name" value="contact" />
 
-            <input type="text" placeholder="Enter your name" required />
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter your name"
+              required
+            />
 
-            <input type="email" placeholder="Enter your email" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
 
-            <textarea placeholder="Enter your message" required />
+            <textarea
+              name="message"
+              placeholder="Enter your message"
+              required
+            />
 
-            <input type="text" placeholder="Enter your phone number" required />
+            <input
+              type="text"
+              name="phone"
+              placeholder="Enter your phone number"
+            />
 
             <div className="checkbox">
               <input type="checkbox" id="terms" required />

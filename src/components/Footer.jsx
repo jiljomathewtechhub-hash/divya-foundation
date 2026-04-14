@@ -1,5 +1,6 @@
 import "./Footer.css";
 import logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -20,17 +21,19 @@ function Footer() {
         {/* MIDDLE */}
         <div className="footer-links">
           <h4>Quick Links</h4>
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/events">Events</a>
-          <a href="/team">Team</a>
-          <a href="/contact">Contact</a>
+
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/events">Events</Link>
+          <Link to="/gallery">Gallery</Link>
+          <Link to="/contact">Contact</Link>
+
         </div>
 
         {/* RIGHT */}
         <div className="footer-contact">
           <h4>Contact</h4>
-          <p>Email: divyafoundation@gmail.com</p>
+          <p>Email: divya.foundation.durham@gmail.com</p>
           <p>Durham, Ontario</p>
         </div>
 
